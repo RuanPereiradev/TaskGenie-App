@@ -1,0 +1,331 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: flex-start;
+  height: 100vh;
+  /* overflow: hidden; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color:black;
+  color: aqua;
+}
+header{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#title{
+  color: aqua;
+  flex-direction: column;
+  line-height: 30px;
+  padding: 4px 7px 30px 50px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: aqua;
+  transition:0.5s all;
+}
+#projetos-btn {
+  border: 3px solid aqua;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none; /* Remove o sublinhado */
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Sombra azul */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Sombra azul */
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.7); /* Sombra azul mais intensa */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Sombra azul */
+  }
+}
+
+
+ul{
+  display: inline-block;
+  color: white;
+}
+li{
+  color: white;
+
+  display: inline-block;
+  margin: 20px;
+}
+
+h1{
+  font-weight: 500;
+  
+}
+header ul {
+  color: white;
+
+  display: flex;
+  list-style-type: none;
+  margin-top: 10px; /* Ajuste conforme necessário */
+}
+
+header li {
+  margin: 0 20px; /* Espaçamento entre os itens */
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+}
+
+.settings i {
+  margin-left: 10px; /* Espaçamento entre os ícones e o texto da tarefa */
+  cursor: pointer;
+}
+
+
+::selection{
+  color: #fff;
+  background: #3C87FF;
+}
+.wrapper{
+  max-width: 500px;
+  padding: 28px 0 30px;
+  margin: 17px auto;
+  background: #333;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.task-input{
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+}
+.task-input img{
+  top: 50%;
+  position: absolute;
+  transform: translate(17px, -50%);
+}
+.task-input input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 0 20px 0 53px;
+  border: 1px solid #999;
+}
+.task-input input:focus,
+.task-input input.active{
+  padding-left: 52px;
+  border: 2px solid aqua;
+}
+.task-input input::placeholder{
+  color: #bfbfbf;
+}
+.task-input img {
+  width: 20px; /* Largura da imagem */
+  height: auto; /* Mantém a proporção original */
+}
+
+.controls, li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls{
+  padding: 18px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.filters span{
+  margin: 0 8px;
+  font-size: 17px;
+  color: #444444;
+  cursor: pointer;
+}
+.filters span:first-child{
+  margin-left: 0;
+}
+.filters span.active{
+  color: #3C87FF;
+}
+.controls .clear-btn{
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  transition: transform 0.25s ease;
+  background: aqua;
+}
+.clear-btn.active{
+  pointer-events: auto;
+}
+.clear-btn:active{
+  transform: scale(0.93);
+}
+.task-box{
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px 25px;
+}
+.task-box.overflow{
+  overflow-y: auto;
+  max-height: 300px;
+}
+.task-box::-webkit-scrollbar{
+  width: 5px;
+}
+.task-box::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.task-box::-webkit-scrollbar-thumb{
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+.task-box .task{
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+.task-box .task:last-child{
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.task-box .task label{
+  display: flex;
+  align-items: flex-start;
+}
+.task label input{
+  margin-top: 7px;
+  accent-color: aqua;
+}
+.task label p{
+  user-select: none;
+  margin-left: 12px;
+  word-wrap: break-word;
+}
+.task label i{
+  margin-right: 15px;
+}
+.task label p.checked{
+  text-decoration: line-through;
+}
+.task-box .settings{
+  top: 0;
+  right: 0;
+}
+.task-box .settings i{
+  font: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.settings :where(i, li){
+  cursor: pointer;
+}
+.settings .task-menu{
+  z-index: 10;
+  right: -5px;
+  bottom: -65px;
+  padding: 5px 0;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: top right;
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.task-box .task:last-child .task-menu{
+  bottom: 0;
+  transform-origin: bottom right;
+}
+.task-box .task:first-child .task-menu{
+  bottom: -65px;
+  transform-origin: top right;
+}
+.task-menu.show{
+  transform: scale(1);
+}
+.task-menu li{
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+.task-menu li:last-child{
+  margin-bottom: 0;
+}
+.settings li:hover{
+  background: #f5f5f5;
+}
+.settings li i{
+  padding-right: 10px;
+}
+
+@media (max-width: 400px) {
+  body{
+    padding: 0 10px;
+  }
+  .wrapper {
+    padding: 20px 0;
+  }
+  .filters span{
+    margin: 0 5px;
+  }
+  .task-input{
+    padding: 0 20px;
+  }
+  .controls{
+    padding: 18px 20px;
+  }
+  .task-box{
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 15px 10px 20px;
+  }
+  .task label input{
+    margin-top: 4px;
+  }
+}
